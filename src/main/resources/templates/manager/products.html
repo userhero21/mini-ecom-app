@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <link href="/manager/css/ui.css" rel="stylesheet" type="text/css">
+    <link href="/manager/css/responsive.css" rel="stylesheet">
+    <link href="/manager/css/styles.css" rel="stylesheet"/>
+
+    <style>
+        .td-img:hover {
+            width: 120px;
+            transform: scale(500%);
+        }
+
+    </style>
+
+</head>
+<body class="sb-nav-fixed">
+<!--<nav class="sb-topnav navbar navbar-expand navbar-light bg-light">-->
+<!--    &lt;!&ndash; Navbar Brand&ndash;&gt;-->
+<!--    <a class="navbar-brand ps-3" href="/">Manager Dash</a>-->
+<!--    &lt;!&ndash; Sidebar Toggle&ndash;&gt;-->
+<!--    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">-->
+<!--        <i class="fas fa-bars"></i>-->
+<!--    </button>-->
+<!--    &lt;!&ndash; Navbar Search&ndash;&gt;-->
+<!--    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">-->
+<!--        &lt;!&ndash; <div class="input-group">-->
+<!--            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />-->
+<!--            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>-->
+<!--        </div> &ndash;&gt;-->
+<!--    </form>-->
+<!--    &lt;!&ndash; Navbar&ndash;&gt;-->
+<!--    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">-->
+<!--        <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"-->
+<!--               aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>-->
+<!--            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">-->
+<!--                <li><a class="dropdown-item" href="/">Main Page</a></li>-->
+<!--                <li><a class="dropdown-item" href="#!">Settings</a></li>-->
+<!--                <li><a class="dropdown-item" href="#!">Activity Log</a></li>-->
+<!--                <li>-->
+<!--                    <hr class="dropdown-divider"/>-->
+<!--                </li>-->
+<!--                <li><a class="dropdown-item" href="/logout">Logout</a></li>-->
+<!--            </ul>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</nav>-->
+<nav th:insert="manager/fragments.html :: topnav"></nav>
+
+<div id="layoutSidenav">
+<!--    <div id="layoutSidenav_nav">-->
+<!--        <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">-->
+<!--            <div class="sb-sidenav-menu">-->
+<!--                <div class="nav">-->
+<!--                    <div class="sb-sidenav-menu-heading">Core</div>-->
+<!--                    <a class="nav-link" href="/dashboard">-->
+<!--                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>-->
+<!--                        Dashboard-->
+<!--                    </a>-->
+<!--                    &lt;!&ndash; <div class="sb-sidenav-menu-heading">Interface</div>-->
+<!--                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">-->
+<!--                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>-->
+<!--                        Layouts-->
+<!--                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>-->
+<!--                    </a>-->
+<!--                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">-->
+<!--                        <nav class="sb-sidenav-menu-nested nav">-->
+<!--                            <a class="nav-link" href="layout-static.html">Static Navigation</a>-->
+<!--                            <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>-->
+<!--                        </nav>-->
+<!--                    </div>-->
+<!--                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">-->
+<!--                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>-->
+<!--                        Pages-->
+<!--                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>-->
+<!--                    </a>-->
+<!--                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">-->
+<!--                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">-->
+<!--                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">-->
+<!--                                Authentication-->
+<!--                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>-->
+<!--                            </a>-->
+<!--                            <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">-->
+<!--                                <nav class="sb-sidenav-menu-nested nav">-->
+<!--                                    <a class="nav-link" href="login.html">Login</a>-->
+<!--                                    <a class="nav-link" href="register.html">Register</a>-->
+<!--                                    <a class="nav-link" href="password.html">Forgot Password</a>-->
+<!--                                </nav>-->
+<!--                            </div>-->
+<!--                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">-->
+<!--                                Error-->
+<!--                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>-->
+<!--                            </a>-->
+<!--                            <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">-->
+<!--                                <nav class="sb-sidenav-menu-nested nav">-->
+<!--                                    <a class="nav-link" href="401.html">401 Page</a>-->
+<!--                                    <a class="nav-link" href="404.html">404 Page</a>-->
+<!--                                    <a class="nav-link" href="500.html">500 Page</a>-->
+<!--                                </nav>-->
+<!--                            </div>-->
+<!--                        </nav>-->
+<!--                    </div> &ndash;&gt;-->
+<!--                    <div class="sb-sidenav-menu-heading">Addons</div>-->
+<!--                    <a class="nav-link" href="/products">-->
+<!--                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>-->
+<!--                        Products-->
+<!--                    </a>-->
+
+<!--                    <a class="nav-link" href="/orders">-->
+<!--                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>-->
+<!--                        Orders-->
+<!--                    </a>-->
+
+<!--                    <a class="nav-link" href="/reviews">-->
+<!--                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>-->
+<!--                        Reviews-->
+<!--                    </a>-->
+
+<!--                    &lt;!&ndash;                            <a class="nav-link" href="tables.html">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                                Assistants&ndash;&gt;-->
+<!--                    &lt;!&ndash;                            </a>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="sb-sidenav-footer">-->
+<!--                <div class="small">Logged in as:</div>-->
+<!--                Start Bootstrap-->
+<!--            </div>-->
+<!--        </nav>-->
+<!--    </div>-->
+    <div th:insert="manager/fragments.html :: layoutSidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <section class="content-main">
+                <div class="content-header">
+                    <h2 class="content-title">Products list</h2>
+                    <div>
+                        <a href="/add" class="btn btn-primary"
+                        ><i class="material-icons md-plus"></i> Create new</a>
+                    </div>
+                </div>
+
+                <table class="table">
+
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Short desc</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Price</th>
+<!--                        <th scope="col">#</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="product : ${page.getContent()}">
+                        <tr>
+                            <td th:text="${product.getId()}" style="line-height: 60px"></td>
+                            <td style="width: 100px">
+                                <img class="td-img" style="width: 50px; transition: .2s"
+                                     th:src="@{'/showCover?img='+${product.getImg()}}">
+                            </td>
+                            <td th:text="${product.getName()}" style="line-height: 60px"></td>
+                            <td th:text="${product.getShort_des()}" style="line-height: 60px"></td>
+                            <td th:text="${product.getCategory()}" style="line-height: 60px"></td>
+                            <td th:text="${product.getColor()}" style="line-height: 60px"></td>
+
+                            <th:block th:switch="${product.getStatus().name()}">
+                                <div th:case="'ACTIVE'">
+                                    <!-- print object is not active -->
+                                    <td style="line-height: 60px">
+                                        <form th:action="@{/upload/change}" method="post">
+                                            <input type="hidden" name="productId" th:value="${product.getId()}">
+                                            <button type="submit" style="background: white; border: 0;">
+                                                <span style="padding: 8px" class="badge alert-success">ACTIVE</span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </div>
+                                <div th:case="'DISABLED'">
+                                    <!-- print object is not active -->
+                                    <td style="line-height: 60px">
+                                        <form th:action="@{/upload/change}" method="post">
+                                            <input type="hidden" name="productId" th:value="${product.getId()}">
+                                            <button type="submit" style="background: white; border: 0;">
+                                                <span style="padding: 8px" class="badge alert-danger">DISABLED</span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </div>
+                                <div th:case="'ARCHIVED'">
+                                    <!-- print object is new and active -->
+                                    <td style="line-height: 60px">
+                                        <form th:action="@{/upload/change}" method="post">
+                                            <input type="hidden" name="productId" th:value="${product.getId()}">
+                                            <button type="submit" style="background: white; border: 0;">
+                                                <span style="padding: 8px" class="badge alert-info">ARCHIVED</span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </div>
+                            </th:block>
+                            <td th:text="'$'+${product.getPrice()}" style="line-height: 60px"></td>
+<!--                            <td>-->
+<!--                                <a class="btn" style="background-color: #ececec; margin-top: 12px"-->
+<!--                                   th:href="@{'/update?productId='+${product.getId()}}">-->
+<!--                                    <img src="img/icon/enter.png" style="transform: scaleX(-1)">-->
+<!--                                </a>-->
+<!--                            </td>-->
+                        </tr>
+                    </th:block>
+
+                    </tbody>
+                </table>
+
+                <!-- card end// -->
+            </section>
+
+            <div class="col-lg-12">
+                <div class="product__pagination" style="margin-bottom: 50px">
+                            <span th:if="${page.hasPrevious()}">
+                                <a class="pagi-b" th:href="@{/manage/products/(page=${page.number - 1})}">Previous</a>
+                            </span>
+                    <th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+                                <span th:if="${page.number == i}">
+                                    <a class="pagi-temp" th:text="${i} + 1"></a>
+                                </span>
+                        <span th:unless="${page.number == i}">
+                                    <a class="pagi-a" th:href="@{/manage/products/(page=${i})}" th:text="${i} + 1"></a>
+                                </span>
+
+                    </th:block>
+                    <span th:if="${page.hasNext()}">
+                                <a class="pagi-b" th:href="@{/manage/products/(page=${page.number + 1})}">Next</a>
+                            </span>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+<script src="/manager/js/scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="/manager/assets/demo/chart-area-demo.js"></script>
+<script src="/manager/assets/demo/chart-bar-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script src="/manager/js/datatables-simple-demo.js"></script>
+
+</body>
+</html>

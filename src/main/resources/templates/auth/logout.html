@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <form method="post" th:action="@{/logout}">
+            <div class="alert alert-warning">
+                <h1>Are you really want to sign out</h1>
+            </div>
+            <button type="submit" class="btn" onclick="clearSessionCookie();">Yes</button>
+            <a th:href="@{/}" class="btn focus">Back</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
