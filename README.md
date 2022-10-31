@@ -14,6 +14,19 @@
   - Manage products
   - Manage orders
   - etc.
+  
+<hr/>
+
+### Prerequisites
+
+Before getting started, You should customized datasource properties. I used postgresql but you can use any database of your choice.
+
+```
+spring.datasource.url=jdbc:<database_name>://<host_name>:<port>/<database>
+spring.datasource.driverClassName=<driver_name>
+spring.datasource.username=<datasource_username>
+spring.datasource.password=<password>
+```
 
 ## Some pages and features
 - Product detail 
