@@ -3,9 +3,7 @@ package com.company.miniecom.controllers;
 import com.company.miniecom.Bot;
 import com.company.miniecom.domains.Product;
 import com.company.miniecom.domains.enums.ProductCategorie;
-import com.company.miniecom.domains.enums.ProductStatus;
 import com.company.miniecom.dto.PeopleCreateDTO;
-import com.company.miniecom.repository.ProductRepository;
 import com.company.miniecom.services.PeopleService;
 import com.company.miniecom.services.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -29,13 +27,13 @@ public class PagesController {
     private final ProductService productService;
 
 
-    @GetMapping("/")
+    @GetMapping
     public String homePage(HttpServletRequest request) {
         bot.sendMessage(request.getRemoteAddr(), "home page");
         return "index";
     }
 
-    @PostMapping("/")
+    @PostMapping
     public String add(@ModelAttribute PeopleCreateDTO dto) {
         peopleService.add(dto);
         return "index";
@@ -48,8 +46,6 @@ public class PagesController {
                                    @RequestParam Optional<String> category,
                                    @RequestParam Optional<String> color,
                                    ModelAndView modelAndView) {
-
-        System.out.println(request);
 
         bot.sendMessage(request.getRemoteAddr(), "products page");
         Page<Product> products = productService.getProducts(pagi, search, category, color);

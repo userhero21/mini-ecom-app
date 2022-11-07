@@ -11,6 +11,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Component
 public class Bot extends TelegramLongPollingBot {
+
     @Value("${bot.name}")
     private String botUsername;
 

@@ -31,42 +31,6 @@
                                 <li>RUB</li>
                             </ul>
                         </div>
-                        <div sec:authorize="hasRole('USER')" style="display: inline">
-
-                            <!-- Button trigger modal -->
-                            <button type="button" style="background: #393939;border: 0;" class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#exampleModal">
-                                <img src="/img/icon/logout.png" style="filter: invert(1);width: 18px;" alt="">
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Log out</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Really?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <form method="post" th:action="@{/logout}">
-                                                <button type="submit" style="background: #dfdfdf; width: 68px;"
-                                                        class="btn" onclick="clearSessionCookie();">Yea
-                                                </button>
-                                                <a th:href="@{/}" class="btn focus">Back</a>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
@@ -82,11 +46,16 @@
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
-                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}"><a th:href="@{/}"><span>Home</span></a></li>
-                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/products' ? 'active':''}"><a th:href="@{/products}"><span>Products</span></a></li>
-                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/about' ? 'active':''}"><a th:href="@{/about}"><span>About us</span></a></li>
-                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/blog' ? 'active':''}"><a th:href="@{/blog}"><span>Blog</span></a></li>
-                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/contact' ? 'active':''}"><a th:href="@{/contact}"><span>Contact</span></a></li>
+                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active':''}"><a
+                                th:href="@{/}"><span>Home</span></a></li>
+                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/products' ? 'active':''}"><a
+                                th:href="@{/products}"><span>Shop</span></a></li>
+                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/about' ? 'active':''}"><a
+                                th:href="@{/about}"><span>About us</span></a></li>
+                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/blog' ? 'active':''}"><a
+                                th:href="@{/blog}"><span>Blog</span></a></li>
+                        <li th:classappend="${#httpServletRequest.getRequestURI() == '/contact' ? 'active':''}"><a
+                                th:href="@{/contact}"><span>Contact</span></a></li>
                     </ul>
                 </nav>
             </div>

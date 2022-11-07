@@ -15,6 +15,7 @@ import java.util.Set;
 @ToString
 @RequiredArgsConstructor
 public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
+
     private final AuthUser user;
 
 
