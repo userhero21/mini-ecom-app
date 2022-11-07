@@ -6,11 +6,11 @@ public enum ProductColors {
     BLACK,
     GREY,
     RED,
-    BROWN,
+//    BROWN,
     YELLOW,
     BLUE,
     GREEN,
-    ORANGE,
+//    ORANGE,
     PURPLE,
-    RAINBOW;
+    RAINBOW,
 }

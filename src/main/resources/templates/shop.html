@@ -106,7 +106,7 @@
                                         <div class="shop__sidebar__categories">
                                             <ul class="nice-scroll">
                                                 <li th:each="category: ${categories}">
-                                                    <a th:href="@{/products/(category=${category})}"
+                                                    <a th:href="@{/products/(category=${category.toString().toLowerCase()})}"
                                                        th:value="${category}"
                                                        th:text="${category}"></a>
                                                 </li>
@@ -122,28 +122,24 @@
                                 <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="shop__sidebar__color">
-
-                                            <a th:href="@{'?color=BLACK'}" id="sp-1">
+                                            <a th:href="@{'?color=black'}" id="sp-1">
                                                 <label class="c-1" for="sp-1"> </label></a>
-
-                                            <a th:href="@{'?color=WHITE'}" id="sp-2">
+                                            <a th:href="@{'?color=white'}" id="sp-2">
                                                 <label class="c-2" for="sp-2"> </label></a>
-
-                                            <a th:href="@{'?color=BLUE'}" id="sp-4">
+                                            <a th:href="@{'?color=blue'}" id="sp-4">
                                                 <label class="c-4" for="sp-4"> </label></a>
-
-                                            <a th:href="@{'?color=YELLOW'}" id="sp-3">
+                                            <a th:href="@{'?color=yellow'}" id="sp-3">
                                                 <label class="c-3" for="sp-3"> </label></a>
-
-                                            <a th:href="@{'?color=GREEN'}" id="sp-5">
+                                            <a th:href="@{'?color=green'}" id="sp-5">
                                                 <label class="c-5" for="sp-5"> </label></a>
-
-                                            <a th:href="@{'?color=RED'}" id="sp-6">
+                                            <a th:href="@{'?color=red'}" id="sp-6">
                                                 <label class="c-6" for="sp-6"> </label></a>
-
-                                            <a th:href="@{'?color=RAINBOW'}" id="sp-7">
+                                            <a th:href="@{'?color=purple'}" id="sp-8">
+                                                <label class="c-8" for="sp-8"> </label></a>
+                                            <a th:href="@{'?color=grey'}" id="sp-9">
+                                                <label class="c-9" for="sp-9"> </label></a>
+                                            <a th:href="@{'?color=rainbow'}" id="sp-7">
                                                 <label class="c-7" for="sp-7"> </label></a>
-
 
                                             <!--                                            <label class="c-2" for="sp-2">-->
                                             <!--                                                <input type="radio" id="sp-2">-->
@@ -251,21 +247,25 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__left">
-                                <p>Showing 1–12 of 126 results</p>
+                                <p>Showing
+                                    <span th:text="${page.getContent().size()}"></span>
+                                    of <span th:text="${page.totalElements}"></span>
+                                    results</p>
+                                <!--                                <p>Showing <span th:text="${page.totalElements}"></span> 1 – 12 of 126 results</p>-->
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="shop__product__option__right">
-                                <p>Sort by Price:</p>
-                                <label>
-                                    <select>
-                                        <option value="">Low To High</option>
-                                        <option value="">$0 - $55</option>
-                                        <option value="">$55 - $100</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
+                        <!--                        <div class="col-lg-6 col-md-6 col-sm-6">-->
+                        <!--                            <div class="shop__product__option__right">-->
+                        <!--                                <p>Sort by Price:</p>-->
+                        <!--                                <label>-->
+                        <!--                                    <select>-->
+                        <!--                                        <option value="">Low To High</option>-->
+                        <!--                                        <option value="">$0 - $55</option>-->
+                        <!--                                        <option value="">$55 - $100</option>-->
+                        <!--                                    </select>-->
+                        <!--                                </label>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
                 <div class="row">

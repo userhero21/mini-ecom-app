@@ -129,7 +129,7 @@
 <!--                        Products-->
 <!--                    </a>-->
 
-<!--                    <a class="nav-link" href="/orders">-->
+<!--                    <a class="nav-link" href="/manage/orders">-->
 <!--                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>-->
 <!--                        Orders-->
 <!--                    </a>-->
@@ -171,7 +171,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Short desc</th>
+                        <th scope="col" style="width: 600px">Short desc</th>
                         <th scope="col">Category</th>
                         <th scope="col">Color</th>
                         <th scope="col">Status</th>
@@ -188,7 +188,7 @@
                                      th:src="@{'/showCover?img='+${product.getImg()}}">
                             </td>
                             <td th:text="${product.getName()}" style="line-height: 60px"></td>
-                            <td th:text="${product.getShort_des()}" style="line-height: 60px"></td>
+                            <td th:text="${product.getShort_des()}" style="line-height: 22px"></td>
                             <td th:text="${product.getCategory()}" style="line-height: 60px"></td>
                             <td th:text="${product.getColor()}" style="line-height: 60px"></td>
 
