@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Login Page</title>
+
+  <link rel="stylesheet" href="/css/azia.css">
+
+</head>
+<body class="az-body">
+
+<div class="az-signin-wrapper">
+  <div class="az-card-signin">
+    <h1 class="az-logo">az<span>i</span>a</h1>
+    <div class="az-signin-header" style="height: 620px">
+      <h2>Welcome back!</h2>
+      <h4>Please sign up to continue</h4>
+
+      <form  method="post" class="form login" th:action="@{/signup}" th:object="${loginDTO}">
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" name="username" class="form-control" placeholder="Enter your email">
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" class="form-control" placeholder="Enter your password">
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="rpassword" class="form-control" placeholder="Repeat the password">
+        </div><!-- form-group -->
+
+        <button class="btn btn-az-primary btn-block">Sign In</button>
+      </form>
+    </div><!-- az-signin-header -->
+    <div class="az-signin-footer">
+      <p><a href="#">Forgot password?</a></p>
+      <p>Already a member? <a href="/signin">Sign in</a></p>
+    </div><!-- az-signin-footer -->
+  </div><!-- az-card-signin -->
+</div><!-- az-signin-wrapper -->
+
+</body>
+
+</html>
