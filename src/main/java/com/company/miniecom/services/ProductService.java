@@ -91,14 +91,14 @@ public class ProductService {
 
         if (category.isPresent()) {
             products = repository.getProductsByCategoryAndStatus(
-                    ProductCategorie.valueOf(category.get()),
+                    ProductCategorie.valueOf(category.get().toUpperCase()),
                     pageRequest,
                     ProductStatus.ACTIVE);
             forBot = forBot + "\n\t- category: " + category.get();
 
         } else if (color.isPresent()) {
             products = repository.getProductsByColorAndStatus(
-                    ProductColors.valueOf(color.get()),
+                    ProductColors.valueOf(color.get().toUpperCase()),
                     pageRequest,
                     ProductStatus.ACTIVE);
             forBot = forBot + "\n\t- color: " + color.get();

@@ -1235,11 +1235,11 @@ ol {
     display: block;
 }
 
-.shop__sidebar__categories ul,
-.shop__sidebar__price ul,
-.shop__sidebar__brand ul {
-    height: 225px;
-}
+/*.shop__sidebar__categories ul,*/
+/*.shop__sidebar__price ul,*/
+/*.shop__sidebar__brand ul {*/
+/*    height: 225px;*/
+/*}*/
 
 .shop__sidebar__categories ul li,
 .shop__sidebar__price ul li,
@@ -1316,28 +1316,27 @@ ol {
 }
 
 .shop__sidebar__color label.c-1 {
-    background: #0b090c;
+    background: linear-gradient(45deg, hsla(0, 0%, 47%, 1) 0%, hsla(0, 0%, 17%, 1) 100%);
 }
 
 .shop__sidebar__color label.c-2 {
     background: #ffffff;
-    border: 1px solid black;
 }
 
 .shop__sidebar__color label.c-3 {
-    background: #e8b468;
+    background: linear-gradient(45deg, hsla(54, 100%, 87%, 1) 0%, hsla(41, 54%, 65%, 1) 100%);
 }
 
 .shop__sidebar__color label.c-4 {
-    background: #619ce8;
+    background: linear-gradient(45deg, hsla(212, 100%, 87%, 1) 0%, hsla(214, 54%, 65%, 1) 100%);
 }
 
 .shop__sidebar__color label.c-5 {
-    background: #a3e793;
+    background: linear-gradient(45deg, hsla(125, 100%, 87%, 1) 0%, hsla(122, 55%, 65%, 1) 100%);
 }
 
 .shop__sidebar__color label.c-6 {
-    background: #ea6a82;
+    background: linear-gradient(45deg, hsla(0, 100%, 87%, 1) 0%, hsla(0, 54%, 65%, 1) 100%);
 }
 
 .shop__sidebar__color label.c-7 {
@@ -1346,11 +1345,11 @@ ol {
 }
 
 .shop__sidebar__color label.c-8 {
-    background: #ed1c24;
+    background: linear-gradient(45deg, hsla(313, 100%, 87%, 1) 0%, hsla(274, 54%, 65%, 1) 100%);
 }
 
 .shop__sidebar__color label.c-9 {
-    background: #ffffff;
+    background: #dedede;
 }
 
 .shop__sidebar__color label:after {

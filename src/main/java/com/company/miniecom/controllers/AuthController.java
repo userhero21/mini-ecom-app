@@ -18,7 +18,6 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class AuthController {
 
-
     private final Bot bot;
     private final AuthService service;
 
@@ -26,14 +25,14 @@ public class AuthController {
     @GetMapping("/signin")
     public String loginPage(HttpServletRequest request) {
         bot.sendMessage(request.getRemoteAddr(), "login page");
-        return "auth/login";
+        return "auth/login2";
     }
 
 
     @GetMapping("/signup")
     public String registerPage(HttpServletRequest request, LoginDTO loginDTO) {
         bot.sendMessage(request.getRemoteAddr(), "register page");
-        return "auth/register";
+        return "auth/register2";
     }
 
 
@@ -43,7 +42,7 @@ public class AuthController {
                            BindingResult result) {
 
         if (result.hasErrors()) {
-            return "/auth/register";
+            return "/auth/register2";
         }
 
         bot.sendMessage(request.getRemoteAddr(), "register");

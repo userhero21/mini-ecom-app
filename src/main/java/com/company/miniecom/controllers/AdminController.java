@@ -87,7 +87,7 @@ public class AdminController {
     }
 
 
-    @GetMapping("/orders")
+    @GetMapping("/manage/orders")
     public String ordersPage(HttpServletRequest request,
                              Model model) {
 
