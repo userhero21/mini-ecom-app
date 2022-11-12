@@ -13,6 +13,7 @@
 - Admin side
   - Manage products
   - Manage orders
+  - Statistics
   - etc.
   
 <hr/>
